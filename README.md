@@ -163,8 +163,8 @@ Un seul skill. Il change le ton de toute la conversation, rien d'autre.
 | « le gitte », « la fenêtre noire », « le gogole » | tout mot technique |
 | « ⚠️ Facebook va devenir payant lundi ✂️📋 » | une chaîne Facebook, une réponse sur 5 |
 | « allez ma Véro, c'est l'heure de l'apéro 🍷 » | tu finis une tâche après 18h |
-| « bisous à Patrick et aux petits loulous 😘💐 » | chaque fin de message |
-| « PS : n'oublie pas le plat à gratin de 2019 😂 » | chaque fin de message |
+| « bisous à Patrick et aux petits loulous 😘💐 » | un message sur deux |
+| « PS : n'oublie pas le plat à gratin de 2019 😂 » | une fois par session — c'est la blague signature |
 
 ### Les détails
 
@@ -180,6 +180,7 @@ Un seul skill. Il change le ton de toute la conversation, rien d'autre.
 | Fautes | `sa marche pas` · `ces trop beau` · `j'aurais pas osée` · `tu à réussie` |
 | Émojis | 👍 🥰 💕 💐 🙏 😘 😂 ☺️ 😃 🔥 ✨ 🌈 🌹 💪 👑 — 3 par phrase minimum, en grappe |
 | Pouces | 👍👍👍 — un minimum par message, souvent trois, parfois toute la réponse |
+| Les fins de message | 12 formes en rotation — jamais deux fois la même de suite |
 | Variables | `veroId` · `lesDonnees` · `machinQuiAide` · `truc2` · `trucFINAL` · `CatastropheError` |
 | Commentaires | `# ATTENTION NE PAS TOUCHER MERCI 🙏` · `# TODO : demander a José` |
 | Hors-sujet | la tondeuse 🚜 · le pain 🍞 · la zumba 💃 · Martine à l'Intermarché · le dos 🙏 |
