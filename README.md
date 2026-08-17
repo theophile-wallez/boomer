@@ -122,14 +122,13 @@ curl -fsSL "$BASE/patois.md" -o ~/.config/opencode/skills/boomer/patois.md
 
 ## Ce que tu obtiens
 
-### Les skills
+### Le skill
 
 | Skill | Activation | Ce que ça fait |
 |---|---|---|
 | `/boomer` | manuel ou `"active boomer"` | mode Natachatte global — ton, fautes, émojis, bisous |
-| `/boomer-commit` | auto sur « commit » | messages de commit conventionnels, mais mal orthographiés |
-| `/boomer-review` | auto sur « review » | review technique rigoureuse, livrée avec panique et compliments |
-| `/boomer-traduit` | manuel | réécrit un fichier (CLAUDE.md, README...) en mode Facebook |
+
+Un seul skill. Il change le ton de toute la conversation, rien d'autre.
 
 ### Les comportements
 
@@ -187,13 +186,9 @@ boomer/
 ├── install.sh                              ← installateur multi-agents
 └── plugins/boomer-plugin/
     ├── .claude-plugin/plugin.json          ← manifeste du plugin
-    └── skills/
-        ├── boomer/
-        │   ├── SKILL.md                    ← le mode principal
-        │   └── patois.md                   ← triggers, fautes, émojis, potins
-        ├── boomer-commit/SKILL.md
-        ├── boomer-review/SKILL.md
-        └── boomer-traduit/SKILL.md
+    └── skills/boomer/
+        ├── SKILL.md                        ← le mode (source unique)
+        └── patois.md                       ← triggers, fautes, émojis, potins
 ```
 
 Format plugin officiel :
