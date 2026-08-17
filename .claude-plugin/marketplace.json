@@ -8,7 +8,7 @@
     {
       "name": "boomer-plugin",
       "source": "./plugins/boomer-plugin",
-      "description": "Makes Claude answer like Natachatte 🥰, a 58 year old French Facebook aunt — calls you Véro or Josianne, spams emojis, spells everything wrong, greets Patrick and the kids, adds a PS.",
+      "description": "Makes Claude answer like Natacha 🥰👍, a 58 year old French Facebook aunt — calls you \"ma Véro\" or \"ma Josianne\", spams emojis and thumbs up, spells everything wrong, tells you about her husband José, greets Patrick and the kids, and never forgets the hot coals.",
       "author": {
         "name": "theophile-wallez"
       },

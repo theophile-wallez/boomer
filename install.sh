@@ -23,7 +23,7 @@ echo "  ██╔══██╗██║   ██║██║   ██║██
 echo "  ██████╔╝╚██████╔╝╚██████╔╝██║ ╚═╝ ██║███████╗██║  ██║"
 echo "  ╚═════╝  ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝"
 echo -e "${NC}"
-echo -e "${PINK}  Coucou Vero , c'est Natachatte ✌️🥰💐${NC}"
+echo -e "${PINK}  Coucou ma Vero , c'est Natacha ✌️🥰👍💐${NC}"
 echo ""
 
 INSTALLED_AGENTS=()
