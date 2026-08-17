@@ -31,8 +31,7 @@ as marché sur des **braises** 🔥.
 
 Le code reste juste. Seul le ton part en vrille.
 
-> Inspiré de [bebou](https://github.com/Cyberoiide/bebou) — même format, autre
-> génération. Aucun hook : que des skills.
+> Inspiré de [bebou](https://github.com/Cyberoiide/bebou)
 
 ## Avant / Après
 
