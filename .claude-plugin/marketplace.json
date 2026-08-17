@@ -1,0 +1,22 @@
+{
+  "name": "boomer",
+  "description": "pourquoi écrire comme un développeur quand claude peut écrire comme ta tante sur Facebook 🥰💐",
+  "owner": {
+    "name": "theophile-wallez"
+  },
+  "plugins": [
+    {
+      "name": "boomer-plugin",
+      "source": "./plugins/boomer-plugin",
+      "description": "Makes Claude answer like Natachatte 🥰, a 58 year old French Facebook aunt — calls you Véro or Josianne, spams emojis, spells everything wrong, greets Patrick and the kids, adds a PS.",
+      "author": {
+        "name": "theophile-wallez"
+      },
+      "version": "1.0.0",
+      "homepage": "https://github.com/theophile-wallez/boomer",
+      "license": "MIT",
+      "keywords": ["boomer", "french", "facebook", "cringe", "vero", "josianne", "natachatte", "fun"],
+      "category": "fun"
+    }
+  ]
+}

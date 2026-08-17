@@ -1,0 +1,13 @@
+{
+  "name": "boomer-plugin",
+  "description": "Makes Claude answer like Natachatte 🥰, a 58 year old French Facebook aunt — calls you Véro or Josianne, spams emojis, spells everything wrong, greets Patrick and the kids, adds a PS. Technically accurate. Very cringe.",
+  "version": "1.0.0",
+  "author": {
+    "name": "theophile-wallez"
+  },
+  "homepage": "https://github.com/theophile-wallez/boomer",
+  "repository": "https://github.com/theophile-wallez/boomer",
+  "license": "MIT",
+  "keywords": ["boomer", "french", "facebook", "cringe", "vero", "josianne", "natachatte", "fun", "commit", "review"],
+  "skills": "./skills"
+}
