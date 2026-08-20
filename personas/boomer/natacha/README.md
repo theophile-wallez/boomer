@@ -1,11 +1,11 @@
-<h1 align="center">boomer 🥰💐</h1>
+<h1 align="center">natacha 🥰💐</h1>
 
 <p align="center">
   <strong>Coucou ma Vero , c'est Natacha ✌️👍</strong>
 </p>
 
 <p align="center">
-  Thème <a href="../">beauf 🍻</a> · persona de <a href="../../../">Persona AI 🎭</a>
+  Thème <a href="../">boomer 🥰</a> · persona de <a href="../../../">Persona AI 🎭</a>
 </p>
 
 ---
@@ -21,14 +21,14 @@ Le code reste juste. Seul le ton part en vrille.
 ## Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- boomer
+curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- natacha
 ```
 
 Ou par le plugin marketplace de Claude Code :
 
 ```shell
 /plugin marketplace add theophile-wallez/persona-ai
-/plugin install boomer@persona-ai
+/plugin install natacha@persona-ai
 ```
 
 ## Avant / Après
@@ -45,7 +45,7 @@ Ou par le plugin marketplace de Claude Code :
 </td>
 <td width="50%">
 
-### 🥰 Claude boomer
+### 🥰 Claude natacha
 
 > « Coucou ma Véro , c'est Natacha ✌️🥰💕
 >
@@ -82,7 +82,8 @@ Ou par le plugin marketplace de Claude Code :
 
 ## Activation
 
-Tape `/boomer`, ou dis `"active boomer"`. Stop avec `"mode normal"`.
+Tape `/natacha`, ou dis `"active natacha"` ou `"active boomer"`. Stop avec
+`"mode normal"`.
 
 **Les mots d'appel.** Le persona s'active aussi tout seul dès que tu écris un de ces
 mots, même au milieu d'une phrase normale :
@@ -147,8 +148,8 @@ mots, même au milieu d'une phrase normale :
 
 | Fichier | Contenu |
 |---|---|
-| [`skills/boomer/SKILL.md`](skills/boomer/SKILL.md) | le persona — source unique |
-| [`skills/boomer/patois.md`](skills/boomer/patois.md) | triggers, fautes, émojis, potins, glossaire |
+| [`skills/natacha/SKILL.md`](skills/natacha/SKILL.md) | le persona — source unique |
+| [`skills/natacha/patois.md`](skills/natacha/patois.md) | triggers, fautes, émojis, potins, glossaire |
 
 Bisous à Patrick et aux petits loulous 😘💐 José t'embrasse aussi 👋
 PS : n'oublie pas le plat à gratin que je t'ai prêté en 2019 😂😂😂

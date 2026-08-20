@@ -5,8 +5,8 @@
 #   curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash
 #
 # Installer un persona, ou un thème :
-#   curl -fsSL .../install.sh | bash -s -- boomer
-#   curl -fsSL .../install.sh | bash -s -- --theme beauf
+#   curl -fsSL .../install.sh | bash -s -- natacha
+#   curl -fsSL .../install.sh | bash -s -- --theme boomer
 #
 # Voir la bibliothèque :
 #   curl -fsSL .../install.sh | bash -s -- --list
@@ -39,6 +39,7 @@ TMPDIR_PA=""
 AGENT_NAMES=()
 AGENT_ROOTS=()
 INSTALLED=()
+REMOVED_LEGACY=0
 
 cleanup() {
   local status=$?
@@ -70,12 +71,12 @@ USAGE
 
 EXEMPLES
   install.sh                       installe tous les persona
-  install.sh boomer                installe un persona
-  install.sh beauf                 installe un thème complet
-  install.sh --theme beauf,kawaii  installe deux thèmes
+  install.sh natacha               installe un persona
+  install.sh boomer                installe un thème complet
+  install.sh --theme boomer,kawaii installe deux thèmes
   install.sh --list                affiche la bibliothèque
   install.sh --themes              affiche les thèmes
-  install.sh --uninstall boomer    supprime un persona
+  install.sh --uninstall natacha   supprime un persona
   install.sh --uninstall --all     supprime tout
 
 OPTIONS
@@ -157,7 +158,7 @@ else
 fi
 
 # --- registre → une ligne par persona ---
-# thème|titre du thème|id|skill|titre|résumé|fichiers|état
+# thème|titre du thème|id|skill|titre|résumé|fichiers|état|anciens noms
 read_registry() {
   awk '
     function val(line) {
@@ -175,13 +176,14 @@ read_registry() {
     /"tagline"[[:space:]]*:/       { tagline = val($0); next }
     /"files"[[:space:]]*:/         { files = val($0); next }
     /"status"[[:space:]]*:/        { status = val($0); next }
+    /"legacy"[[:space:]]*:/        { legacy = val($0); next }
     /^[[:space:]]*}/ {
       if (id != "") {
         if (skill == "") skill = id
         if (files == "") files = "SKILL.md"
-        printf "%s|%s|%s|%s|%s|%s|%s|%s\n", theme, theme_title, id, skill, title, tagline, files, status
+        printf "%s|%s|%s|%s|%s|%s|%s|%s|%s\n", theme, theme_title, id, skill, title, tagline, files, status, legacy
       }
-      id=""; skill=""; title=""; tagline=""; files=""; status=""
+      id=""; skill=""; title=""; tagline=""; files=""; status=""; legacy=""
     }
   ' "$REGISTRY"
 }
@@ -390,6 +392,17 @@ remove_persona() {
   echo "$dest"
 }
 
+# --- anciens noms : un persona renommé laisse un dossier orphelin ---
+remove_legacy() {
+  local legacy="$1" skill="$2" root="$3" gone=""
+  for old in $legacy; do
+    [ "$old" = "$skill" ] && continue
+    gone="$(remove_persona "$old" "$root")" || continue
+    echo -e "  ${YELLOW}⌫${NC} ancien nom ${GREY}$gone${NC}"
+    REMOVED_LEGACY=$((REMOVED_LEGACY + 1))
+  done
+}
+
 banner
 detect_agents
 
@@ -401,7 +414,15 @@ if [ "$MODE" = "uninstall" ]; then
     theme="$(field "$line" 1)"
     id="$(field "$line" 3)"
     skill="$(field "$line" 4)"
+    legacy="$(field "$line" 9)"
     is_selected "$id" "$theme" || continue
+    if [ -n "$legacy" ]; then
+      i=0
+      while [ $i -lt ${#AGENT_ROOTS[@]} ]; do
+        remove_legacy "$legacy" "$skill" "${AGENT_ROOTS[$i]}"
+        i=$((i + 1))
+      done
+    fi
     if plugin_uninstall "$id"; then
       echo -e "  ${GREEN}✓${NC} $id ${GREY}— plugin Claude Code${NC}"
       INSTALLED+=("$id (plugin)")
@@ -418,7 +439,7 @@ if [ "$MODE" = "uninstall" ]; then
 $(read_registry)
 EOF
   echo ""
-  if [ ${#INSTALLED[@]} -eq 0 ]; then
+  if [ ${#INSTALLED[@]} -eq 0 ] && [ $REMOVED_LEGACY -eq 0 ]; then
     echo -e "  ${YELLOW}Rien à supprimer${NC}"
   else
     echo -e "${PINK}${BOLD}  Persona supprimés 🎭${NC}"
@@ -436,7 +457,17 @@ while IFS= read -r line; do
   id="$(field "$line" 3)"
   skill="$(field "$line" 4)"
   files="$(field "$line" 7)"
+  legacy="$(field "$line" 9)"
   is_selected "$id" "$theme" || continue
+
+  # un persona renommé laisse un dossier orphelin qui répond aux mêmes mots
+  if [ -n "$legacy" ]; then
+    i=0
+    while [ $i -lt ${#AGENT_ROOTS[@]} ]; do
+      remove_legacy "$legacy" "$skill" "${AGENT_ROOTS[$i]}"
+      i=$((i + 1))
+    done
+  fi
 
   done_plugin="no"
   if plugin_install "$id"; then

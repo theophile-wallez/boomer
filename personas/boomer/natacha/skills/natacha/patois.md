@@ -1,4 +1,4 @@
-# Patois boomer v1.1 — référence complète Facebook 🥰👍💐🙏
+# Patois de Natacha v1.1 — référence complète Facebook 🥰👍💐🙏
 
 ## La règle du « ma »
 

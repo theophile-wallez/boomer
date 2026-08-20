@@ -36,16 +36,22 @@ curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/in
 
 ## La bibliothèque
 
-### 🍻 Beauf — `--theme beauf`
+### 🥰 Boomer — `--theme boomer`
 
-Le français du barbecue, du Facebook et de l'apéro.
+Le Facebook des années 2010 : les émojis en grappe, les pouces et les chaînes.
 
 | Persona | État | Ce que ça fait |
 |---|---|---|
-| [`boomer`](personas/beauf/boomer) 🥰💐 | stable | Natacha, une copine Facebook de 58 ans. Elle t'appelle « ma Véro », met des pouces à gogo 👍, écrit « sa marche pas », donne des nouvelles de son mari José, salue Patrick et les enfants, et te rappelle que tu as marché sur des braises 🔥. |
+| [`natacha`](personas/boomer/natacha) 🥰💐 | stable | Natacha, une copine Facebook de 58 ans. Elle t'appelle « ma Véro », met des pouces à gogo 👍, écrit « sa marche pas », donne des nouvelles de son mari José, salue Patrick et les enfants, et te rappelle que tu as marché sur des braises 🔥. |
 
 D'autres thèmes arrivent. Le chapitre [Ajouter un persona](#ajouter-un-persona)
 explique comment créer un persona, et comment créer un thème.
+
+> **Le skill `boomer` devient le persona `natacha`, dans le thème `boomer`.** Tape
+> `/natacha` à la place de `/boomer`. Le mot « boomer » reste un mot d'appel, donc
+> « active boomer » marche toujours. Le script d'installation supprime l'ancien dossier
+> `~/.claude/skills/boomer/`. Un ancien plugin s'enlève avec
+> `/plugin uninstall boomer@boomer`.
 
 ## Installation
 
@@ -56,10 +62,10 @@ explique comment créer un persona, et comment créer un thème.
 curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash
 
 # un seul persona
-curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- boomer
+curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- natacha
 
 # un thème complet
-curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- --theme beauf
+curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- --theme boomer
 
 # la liste, sans rien installer
 curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- --list
@@ -74,7 +80,7 @@ Depuis une copie du dépôt, le script installe les fichiers locaux :
 git clone https://github.com/theophile-wallez/persona-ai
 cd persona-ai
 ./install.sh --list
-./install.sh boomer
+./install.sh natacha
 ```
 
 ### Les commandes du script
@@ -82,14 +88,14 @@ cd persona-ai
 | Commande | Effet |
 |---|---|
 | `install.sh` | installe tous les persona |
-| `install.sh boomer` | installe un persona |
-| `install.sh beauf` | installe un thème complet |
-| `install.sh --theme beauf,kawaii` | installe deux thèmes |
+| `install.sh natacha` | installe un persona |
+| `install.sh boomer` | installe un thème complet |
+| `install.sh --theme boomer,kawaii` | installe deux thèmes |
 | `install.sh --list` | affiche les persona, par thème |
 | `install.sh --themes` | affiche les thèmes |
 | `install.sh --agent claude` | cible un seul agent |
 | `install.sh --skills-only` | ignore le plugin marketplace de Claude Code |
-| `install.sh --uninstall boomer` | supprime un persona |
+| `install.sh --uninstall natacha` | supprime un persona |
 | `install.sh --uninstall --all` | supprime tous les persona |
 | `install.sh --help` | affiche l'aide |
 
@@ -99,24 +105,24 @@ Un argument sans tiret est un identifiant de persona, ou un identifiant de thèm
 
 ```shell
 /plugin marketplace add theophile-wallez/persona-ai
-/plugin install boomer@persona-ai
+/plugin install natacha@persona-ai
 ```
 
 Mise à jour automatique. Désinstallation propre avec
-`/plugin uninstall boomer@persona-ai`.
+`/plugin uninstall natacha@persona-ai`.
 
 ### Option C — À la main
 
 ```bash
-PERSONA=boomer
-THEME=beauf
+PERSONA=natacha
+THEME=boomer
 BASE=https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/personas/$THEME/$PERSONA/skills/$PERSONA
 mkdir -p ~/.claude/skills/$PERSONA
 curl -fsSL "$BASE/SKILL.md" -o ~/.claude/skills/$PERSONA/SKILL.md
 ```
 
 Les fichiers de référence d'un persona sont listés dans le champ `files` de
-[`personas/registry.json`](personas/registry.json). Pour `boomer`, ajoute `patois.md`.
+[`personas/registry.json`](personas/registry.json). Pour `natacha`, ajoute `patois.md`.
 
 ### Les dossiers par agent
 
@@ -132,8 +138,8 @@ Les fichiers de référence d'un persona sont listés dans le champ `files` de
 Tape `/<persona>`, ou dis `"active <persona>"`. Reviens en normal avec `"mode normal"`.
 
 ```
-/boomer
-active boomer
+/natacha
+active natacha
 mode normal
 ```
 
@@ -170,11 +176,11 @@ persona-ai/
 ├── install.sh                          ← l'installateur multi-agents
 ├── personas/
 │   ├── registry.json                   ← la bibliothèque : thèmes et persona
-│   └── beauf/                          ← un thème = un dossier
-│       └── boomer/                     ← un persona = un dossier
+│   └── boomer/                         ← un thème = un dossier
+│       └── natacha/                    ← un persona = un dossier
 │           ├── README.md
 │           ├── .claude-plugin/plugin.json
-│           └── skills/boomer/
+│           └── skills/natacha/
 │               ├── SKILL.md            ← le persona (source unique)
 │               └── patois.md           ← les références du persona
 └── templates/

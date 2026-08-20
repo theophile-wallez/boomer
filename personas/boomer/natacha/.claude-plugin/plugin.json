@@ -1,5 +1,5 @@
 {
-  "name": "boomer",
+  "name": "natacha",
   "description": "Makes Claude answer like Natacha 🥰👍, a 58 year old French Facebook aunt — calls you \"ma Véro\" or \"ma Josianne\", spams emojis and thumbs up, spells everything wrong, tells you about her husband José, greets your husband Patrick and the kids, and keeps saying how brave you were to walk on hot coals. Technically accurate. Very cringe.",
   "version": "1.1.0",
   "author": {
@@ -8,6 +8,6 @@
   "homepage": "https://github.com/theophile-wallez/persona-ai",
   "repository": "https://github.com/theophile-wallez/persona-ai",
   "license": "MIT",
-  "keywords": ["persona", "boomer", "french", "facebook", "cringe", "vero", "josianne", "natachatte", "fun"],
+  "keywords": ["persona", "natacha", "boomer", "french", "facebook", "cringe", "vero", "josianne", "natachatte", "fun"],
   "skills": "./skills"
 }

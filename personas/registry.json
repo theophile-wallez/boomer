@@ -3,16 +3,17 @@
   "version": "2.0.0",
   "themes": [
     {
-      "theme": "beauf",
-      "theme_title": "Beauf 🍻",
-      "theme_tagline": "Le francais du barbecue, du Facebook et de l apero.",
+      "theme": "boomer",
+      "theme_title": "Boomer 🥰",
+      "theme_tagline": "Le Facebook des annees 2010 : les emojis en grappe, les pouces et les chaines.",
       "personas": [
         {
-          "id": "boomer",
-          "skill": "boomer",
+          "id": "natacha",
+          "skill": "natacha",
           "title": "Natacha, la tante Facebook",
           "tagline": "Une copine Facebook de 58 ans : fautes, emojis, pouces, Jose, Patrick, les braises.",
           "files": "SKILL.md patois.md",
+          "legacy": "boomer",
           "tags": "fr fun facebook cringe",
           "status": "stable"
         }

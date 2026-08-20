@@ -21,8 +21,8 @@ du persona est son identifiant, et le nom du dossier du skill est le même.
 1. Copiez le modèle dans le thème choisi :
 
    ```bash
-   cp -r templates/persona personas/beauf/monpersona
-   mv personas/beauf/monpersona/skills/PERSONA_ID personas/beauf/monpersona/skills/monpersona
+   cp -r templates/persona personas/boomer/monpersona
+   mv personas/boomer/monpersona/skills/PERSONA_ID personas/boomer/monpersona/skills/monpersona
    ```
 
 2. Remplacez `PERSONA_ID` et `THEME_ID` dans les deux fichiers.
@@ -48,12 +48,16 @@ du persona est son identifiant, et le nom du dossier du skill est le même.
    `files` liste les fichiers à installer, séparés par une espace. `SKILL.md` est
    obligatoire.
 
+   Le champ `legacy` est facultatif. Il liste les anciens noms de skill du persona,
+   séparés par une espace. Le script supprime ces dossiers, parce qu'un persona renommé
+   laisse un dossier orphelin qui répond aux mêmes mots d'appel.
+
 5. Déclarez le plugin dans `.claude-plugin/marketplace.json` :
 
    ```json
    {
      "name": "monpersona",
-     "source": "./personas/beauf/monpersona",
+     "source": "./personas/boomer/monpersona",
      "description": "...",
      "version": "1.0.0",
      "license": "MIT",
@@ -93,7 +97,7 @@ règles suivantes protègent cette lecture :
 - Les valeurs sont des chaînes de caractères. Pas de tableau, sauf `personas`.
 - Les valeurs ne contiennent ni `|` ni `}`.
 - Les clés `theme`, `theme_title`, `theme_tagline`, `id`, `skill`, `title`, `tagline`,
-  `files` et `status` gardent leur nom exact.
+  `files`, `status` et `legacy` gardent leur nom exact.
 
 ## Les identifiants
 
