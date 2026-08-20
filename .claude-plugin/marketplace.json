@@ -1,21 +1,21 @@
 {
-  "name": "boomer",
-  "description": "pourquoi écrire comme un développeur quand claude peut écrire comme ta tante sur Facebook 🥰💐",
+  "name": "persona-ai",
+  "description": "Persona AI — une bibliothèque de persona pour ton agent de code. Installe-les toutes, ou une seule 🎭",
   "owner": {
     "name": "theophile-wallez"
   },
   "plugins": [
     {
-      "name": "boomer-plugin",
-      "source": "./plugins/boomer-plugin",
+      "name": "boomer",
+      "source": "./personas/beauf/boomer",
       "description": "Makes Claude answer like Natacha 🥰👍, a 58 year old French Facebook aunt — calls you \"ma Véro\" or \"ma Josianne\", spams emojis and thumbs up, spells everything wrong, tells you about her husband José, greets Patrick and the kids, and never forgets the hot coals.",
       "author": {
         "name": "theophile-wallez"
       },
-      "version": "1.0.0",
-      "homepage": "https://github.com/theophile-wallez/boomer",
+      "version": "1.1.0",
+      "homepage": "https://github.com/theophile-wallez/persona-ai",
       "license": "MIT",
-      "keywords": ["boomer", "french", "facebook", "cringe", "vero", "josianne", "natachatte", "fun"],
+      "keywords": ["persona", "boomer", "french", "facebook", "cringe", "vero", "josianne", "natachatte", "fun"],
       "category": "fun"
     }
   ]

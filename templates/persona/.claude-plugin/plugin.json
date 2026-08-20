@@ -1,0 +1,13 @@
+{
+  "name": "PERSONA_ID",
+  "description": "Une phrase en anglais qui décrit le persona. L'agent lit ce champ pour choisir le persona.",
+  "version": "1.0.0",
+  "author": {
+    "name": "theophile-wallez"
+  },
+  "homepage": "https://github.com/theophile-wallez/persona-ai",
+  "repository": "https://github.com/theophile-wallez/persona-ai",
+  "license": "MIT",
+  "keywords": ["persona", "PERSONA_ID", "THEME_ID"],
+  "skills": "./skills"
+}

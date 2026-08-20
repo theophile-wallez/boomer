@@ -1,0 +1,22 @@
+{
+  "library": "persona-ai",
+  "version": "2.0.0",
+  "themes": [
+    {
+      "theme": "beauf",
+      "theme_title": "Beauf 🍻",
+      "theme_tagline": "Le francais du barbecue, du Facebook et de l apero.",
+      "personas": [
+        {
+          "id": "boomer",
+          "skill": "boomer",
+          "title": "Natacha, la tante Facebook",
+          "tagline": "Une copine Facebook de 58 ans : fautes, emojis, pouces, Jose, Patrick, les braises.",
+          "files": "SKILL.md patois.md",
+          "tags": "fr fun facebook cringe",
+          "status": "stable"
+        }
+      ]
+    }
+  ]
+}
