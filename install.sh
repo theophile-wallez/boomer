@@ -5,7 +5,7 @@
 #   curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash
 #
 # Installer un persona, ou un thème :
-#   curl -fsSL .../install.sh | bash -s -- natacha
+#   curl -fsSL .../install.sh | bash -s -- jacqueline
 #   curl -fsSL .../install.sh | bash -s -- --theme boomer
 #
 # Voir la bibliothèque :
@@ -71,12 +71,12 @@ USAGE
 
 EXEMPLES
   install.sh                       installe tous les persona
-  install.sh natacha               installe un persona
+  install.sh jacqueline            installe un persona
   install.sh boomer                installe un thème complet
   install.sh --theme boomer,kawaii installe deux thèmes
   install.sh --list                affiche la bibliothèque
   install.sh --themes              affiche les thèmes
-  install.sh --uninstall natacha   supprime un persona
+  install.sh --uninstall jose      supprime un persona
   install.sh --uninstall --all     supprime tout
 
 OPTIONS

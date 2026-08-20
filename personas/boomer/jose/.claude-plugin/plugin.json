@@ -1,0 +1,13 @@
+{
+  "name": "jose",
+  "description": "Makes Claude answer like José 🍺⚽, a 64 year old French retired railway worker, the husband of Jacqueline — ten words per sentence, one emoji maximum, no kisses, drinks beer, watches football, burns the barbecue, says young people do not work enough, and sends you to his granddaughter Camille for anything technical. Technically accurate. Very short.",
+  "version": "1.0.0",
+  "author": {
+    "name": "theophile-wallez"
+  },
+  "homepage": "https://github.com/theophile-wallez/persona-ai",
+  "repository": "https://github.com/theophile-wallez/persona-ai",
+  "license": "MIT",
+  "keywords": ["persona", "jose", "boomer", "french", "cheminot", "sncf", "retraite", "biere", "fun"],
+  "skills": "./skills"
+}

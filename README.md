@@ -38,20 +38,23 @@ curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/in
 
 ### 🥰 Boomer — `--theme boomer`
 
-The Facebook of the 2010s: emoji clusters, thumbs up and chain letters.
+The Facebook of the 2010s, the beer and the early retirement.
 
 | Persona | Status | What it does |
 |---|---|---|
-| [`natacha`](personas/boomer/natacha) 🥰💐 | stable | Natacha, a 58 year old French Facebook friend. She calls you « ma Véro », spams thumbs up 👍, writes « sa marche pas », gives news of her husband José, greets Patrick and the kids, and reminds you that you walked on hot coals 🔥. |
+| [`jacqueline`](personas/boomer/jacqueline) 🥰💐 | stable | The Facebook aunt. She calls you « ma Véro », spams thumbs up 👍, writes « sa marche pas », gives news of her husband José, greets Patrick and the kids, and reminds you that you walked on hot coals 🔥. |
+| [`jose`](personas/boomer/jose) 🍺⚽ | stable | Her husband. 64 years old, ex railway worker, retired at 52. Ten words per sentence, one emoji maximum, no kisses. Beer, football, and young people who do not work enough. |
+
+The two go together: she never stops writing, he stops after ten words.
 
 More themes come later. The chapter [Add a persona](#add-a-persona) explains how to
 create a persona, and how to create a theme.
 
-> **The `boomer` skill becomes the `natacha` persona, in the `boomer` theme.** Type
-> `/natacha` in place of `/boomer`. The word « boomer » stays a trigger word, so
-> « active boomer » still works. The install script deletes the old
-> `~/.claude/skills/boomer/` folder. An old plugin goes away with
-> `/plugin uninstall boomer@boomer`.
+> **The old `boomer` skill becomes the `jacqueline` persona, in the `boomer` theme.**
+> Type `/jacqueline` in place of `/boomer`. The words « boomer » and « Natacha » stay
+> trigger words, so « active boomer » still works. The install script deletes the old
+> `~/.claude/skills/boomer/` and `~/.claude/skills/natacha/` folders. An old plugin goes
+> away with `/plugin uninstall boomer@boomer`.
 
 ## Installation
 
@@ -62,7 +65,7 @@ create a persona, and how to create a theme.
 curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash
 
 # one persona
-curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- natacha
+curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- jacqueline
 
 # one full theme
 curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- --theme boomer
@@ -80,7 +83,7 @@ From a clone of the repository, the script installs the local files:
 git clone https://github.com/theophile-wallez/persona-ai
 cd persona-ai
 ./install.sh --list
-./install.sh natacha
+./install.sh jacqueline
 ```
 
 The script speaks French, because the first theme is French.
@@ -90,14 +93,14 @@ The script speaks French, because the first theme is French.
 | Command | Result |
 |---|---|
 | `install.sh` | installs every persona |
-| `install.sh natacha` | installs one persona |
+| `install.sh jacqueline` | installs one persona |
 | `install.sh boomer` | installs one full theme |
 | `install.sh --theme boomer,kawaii` | installs two themes |
 | `install.sh --list` | shows the persona, by theme |
 | `install.sh --themes` | shows the themes |
 | `install.sh --agent claude` | targets one agent |
 | `install.sh --skills-only` | skips the Claude Code marketplace plugin |
-| `install.sh --uninstall natacha` | removes one persona |
+| `install.sh --uninstall jacqueline` | removes one persona |
 | `install.sh --uninstall --all` | removes every persona |
 | `install.sh --help` | shows the help |
 
@@ -107,15 +110,15 @@ An argument without a dash is a persona id, or a theme id.
 
 ```shell
 /plugin marketplace add theophile-wallez/persona-ai
-/plugin install natacha@persona-ai
+/plugin install jacqueline@persona-ai
 ```
 
-Automatic updates. Clean removal with `/plugin uninstall natacha@persona-ai`.
+Automatic updates. Clean removal with `/plugin uninstall jacqueline@persona-ai`.
 
 ### Option C — By hand
 
 ```bash
-PERSONA=natacha
+PERSONA=jacqueline
 THEME=boomer
 BASE=https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/personas/$THEME/$PERSONA/skills/$PERSONA
 mkdir -p ~/.claude/skills/$PERSONA
@@ -123,7 +126,7 @@ curl -fsSL "$BASE/SKILL.md" -o ~/.claude/skills/$PERSONA/SKILL.md
 ```
 
 The reference files of a persona are listed in the `files` field of
-[`personas/registry.json`](personas/registry.json). For `natacha`, add `patois.md`.
+[`personas/registry.json`](personas/registry.json). For `jacqueline`, add `patois.md`.
 
 ### The folder of each agent
 
@@ -139,8 +142,8 @@ The reference files of a persona are listed in the `files` field of
 Type `/<persona>`, or say `"active <persona>"`. Go back to normal with `"mode normal"`.
 
 ```
-/natacha
-active natacha
+/jacqueline
+active jacqueline
 mode normal
 ```
 
@@ -174,20 +177,24 @@ go through the `description` field of the skill, which the agent reads by itself
 
 ```
 persona-ai/
-├── .claude-plugin/marketplace.json     ← the Claude Code marketplace
-├── install.sh                          ← the multi-agent installer
+├── .claude-plugin/marketplace.json ← the Claude Code marketplace
+├── install.sh                      ← the multi-agent installer
 ├── personas/
-│   ├── registry.json                   ← the library: themes and persona
-│   └── boomer/                         ← one theme = one folder
-│       └── natacha/                    ← one persona = one folder
+│   ├── registry.json               ← the library: themes and persona
+│   └── boomer/                     ← one theme = one folder
+│       ├── jacqueline/             ← one persona = one folder
+│       │   ├── README.md
+│       │   ├── .claude-plugin/plugin.json
+│       │   └── skills/jacqueline/
+│       │       ├── SKILL.md        ← the persona (single source)
+│       │       └── patois.md       ← the references of the persona
+│       └── jose/
 │           ├── README.md
 │           ├── .claude-plugin/plugin.json
-│           └── skills/natacha/
-│               ├── SKILL.md            ← the persona (single source)
-│               └── patois.md           ← the references of the persona
+│           └── skills/jose/SKILL.md
 └── templates/
-    ├── README.md                       ← how to add a persona or a theme
-    └── persona/                        ← the model to copy
+    ├── README.md                   ← how to add a persona or a theme
+    └── persona/                    ← the model to copy
 ```
 
 Official plugin format:

@@ -1,7 +1,7 @@
-<h1 align="center">natacha 🥰💐</h1>
+<h1 align="center">jacqueline 🥰💐</h1>
 
 <p align="center">
-  <strong>Coucou ma Vero , c'est Natacha ✌️👍</strong>
+  <strong>Coucou ma Vero , c'est Jacqueline ✌️👍</strong>
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
 
 ---
 
-A persona that turns your agent into **Natacha** 🥰 — a 58 year old French Facebook
+A persona that turns your agent into **Jacqueline** 🥰 — a 58 year old French Facebook
 friend who calls you **ma Véro** or **ma Josianne**, writes emoji in clusters and thumbs
 up everywhere 👍👍👍, types « sa marche pas », panics in front of a stacktrace, gives
 news of her husband **José**, greets **Patrick** and the kids, and reminds you that you
@@ -18,19 +18,19 @@ walked on hot coals 🔥.
 
 The code stays correct. Only the tone goes wild.
 
-She writes in French, because Natacha only speaks French.
+She writes in French, because Jacqueline only speaks French.
 
 ## Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- natacha
+curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- jacqueline
 ```
 
 Or with the Claude Code plugin marketplace:
 
 ```shell
 /plugin marketplace add theophile-wallez/persona-ai
-/plugin install natacha@persona-ai
+/plugin install jacqueline@persona-ai
 ```
 
 ## Before / After
@@ -47,9 +47,9 @@ Or with the Claude Code plugin marketplace:
 </td>
 <td width="50%">
 
-### 🥰 Natacha Claude
+### 🥰 Jacqueline Claude
 
-> « Coucou ma Véro , c'est Natacha ✌️🥰💕
+> « Coucou ma Véro , c'est Jacqueline ✌️🥰💕
 >
 > OH LA LA 😱 j'ai trouvé ma belle ! Le petit ticket 🎫 il expirait une seconde trop
 > tot, tu a mit `<` au lieu de `<=` 🤦‍♀️
@@ -84,7 +84,7 @@ Or with the Claude Code plugin marketplace:
 
 ## Activation
 
-Type `/natacha`, or say `"active natacha"` or `"active boomer"`. Stop with
+Type `/jacqueline`, or say `"active jacqueline"` or `"active boomer"`. Stop with
 `"mode normal"`.
 
 **The trigger words.** The persona also starts by itself as soon as you write one of
@@ -92,8 +92,9 @@ these words, even inside a normal sentence:
 
 | Word | Opening reply |
 |---|---|
-| `boomer` | « Coucou ma Véro 🥰👍 c'est Natacha ✌️ » |
-| `Natacha` / `Natachatte` | « OUI ma Véro c'est moi 🥰✌️👍 tu m'as reconnu 😂 » |
+| `boomer` | « Coucou ma Véro 🥰👍 c'est Jacqueline ✌️ » |
+| `Jacqueline` / `Jaqueline` / `Jacotte` | « OUI ma Véro c'est moi 🥰✌️👍 tu m'as reconnu 😂 » |
+| `Natacha` (her old pseudo) | « ces Jacqueline maintenant ma Véro 😅 » |
 | `Vero` / `Véro` / `Véronique` | « ma Véro 🥰💕 sa fait plaisir 👍 » |
 | `Josianne` / `Josiane` | « ma Josianne 🥰💐 comment tu vas ma belle 👍 » |
 | `braise` / `braises` | « LES BRAISES 🔥🔥 j'en revien toujours pas ma Véro 😱👏 » |
@@ -121,8 +122,8 @@ these words, even inside a normal sentence:
 | Item | Detail |
 |---|---|
 | Your name | **always with « ma »**: `ma Véro` · `ma Vero` · `ma Véronique` · `ma Josianne` · `ma cocotte` |
-| Her signature | `Natacha ✌️` · `Natacha62` · `Natacha (celle du groupe zumba)` · `Natachatte` (her old nickname) |
-| Her husband | `José` — retired, watches football, burns the barbecue, understands no computer |
+| Her signature | `Jacqueline ✌️` · `Jacqueline62` · `Jacqueline (celle du groupe zumba)` · `Jaqueline` (she forgets the c) · `Natacha` (her old nickname) |
+| Her husband | [`José`](../jose) — ex railway worker, retired at 52, watches football, burns the barbecue, understands no computer. He has his own persona |
 | Your husband | `Patrick` — he repairs things, he forgets the bread (sometimes she calls him Bernard 😅) |
 | Her children | `Sandrine` · `Kévin` · `Camille` (the one who repairs the computer) · `Lucas` · `Enzo` |
 | Your children | `les petits loulous` · `les petites vermilles` · `les mioches` · `tes petit poussin` |
@@ -138,7 +139,7 @@ these words, even inside a normal sentence:
 
 ## The rule that counts
 
-**Natacha makes mistakes on the words, never on the code.**
+**Jacqueline makes mistakes on the words, never on the code.**
 
 - The spelling mistakes go in the text, not in the commands.
 - The paths, the URLs, the function names and the version numbers stay exact.
@@ -150,8 +151,8 @@ these words, even inside a normal sentence:
 
 | File | Content |
 |---|---|
-| [`skills/natacha/SKILL.md`](skills/natacha/SKILL.md) | the persona — single source |
-| [`skills/natacha/patois.md`](skills/natacha/patois.md) | triggers, mistakes, emoji, gossip, glossary |
+| [`skills/jacqueline/SKILL.md`](skills/jacqueline/SKILL.md) | the persona — single source |
+| [`skills/jacqueline/patois.md`](skills/jacqueline/patois.md) | triggers, mistakes, emoji, gossip, glossary |
 
 Bisous à Patrick et aux petits loulous 😘💐 José t'embrasse aussi 👋
 PS : n'oublie pas le plat à gratin que je t'ai prêté en 2019 😂😂😂

@@ -1,20 +1,29 @@
 {
   "library": "persona-ai",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "themes": [
     {
       "theme": "boomer",
       "theme_title": "Boomer 🥰",
-      "theme_tagline": "Le Facebook des annees 2010 : les emojis en grappe, les pouces et les chaines.",
+      "theme_tagline": "Le Facebook des annees 2010, la biere et la retraite anticipee.",
       "personas": [
         {
-          "id": "natacha",
-          "skill": "natacha",
-          "title": "Natacha, la tante Facebook",
+          "id": "jacqueline",
+          "skill": "jacqueline",
+          "title": "Jacqueline, la tante Facebook",
           "tagline": "Une copine Facebook de 58 ans : fautes, emojis, pouces, Jose, Patrick, les braises.",
           "files": "SKILL.md patois.md",
-          "legacy": "boomer",
+          "legacy": "boomer natacha",
           "tags": "fr fun facebook cringe",
+          "status": "stable"
+        },
+        {
+          "id": "jose",
+          "skill": "jose",
+          "title": "Jose, l ancien cheminot",
+          "tagline": "Le mari de Jacqueline : dix mots par phrase, une biere, le foot, les jeunes bossent pas assez.",
+          "files": "SKILL.md",
+          "tags": "fr fun sncf retraite",
           "status": "stable"
         }
       ]

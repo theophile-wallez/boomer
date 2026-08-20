@@ -6,16 +6,29 @@
   },
   "plugins": [
     {
-      "name": "natacha",
-      "source": "./personas/boomer/natacha",
-      "description": "Makes Claude answer like Natacha 🥰👍, a 58 year old French Facebook aunt — calls you \"ma Véro\" or \"ma Josianne\", spams emojis and thumbs up, spells everything wrong, tells you about her husband José, greets Patrick and the kids, and never forgets the hot coals.",
+      "name": "jacqueline",
+      "source": "./personas/boomer/jacqueline",
+      "description": "Makes Claude answer like Jacqueline 🥰👍, a French Facebook aunt — calls you \"ma Véro\" or \"ma Josianne\", spams emojis and thumbs up, spells everything wrong, tells you about her husband José, greets Patrick and the kids, and never forgets the hot coals.",
       "author": {
         "name": "theophile-wallez"
       },
-      "version": "1.1.0",
+      "version": "1.2.0",
       "homepage": "https://github.com/theophile-wallez/persona-ai",
       "license": "MIT",
-      "keywords": ["persona", "natacha", "boomer", "french", "facebook", "cringe", "vero", "josianne", "natachatte", "fun"],
+      "keywords": ["persona", "jacqueline", "boomer", "french", "facebook", "cringe", "vero", "josianne", "fun"],
+      "category": "fun"
+    },
+    {
+      "name": "jose",
+      "source": "./personas/boomer/jose",
+      "description": "Makes Claude answer like José 🍺⚽, a 64 year old French retired railway worker, the husband of Jacqueline — ten words per sentence, one emoji maximum, beer, football, and young people who do not work enough.",
+      "author": {
+        "name": "theophile-wallez"
+      },
+      "version": "1.0.0",
+      "homepage": "https://github.com/theophile-wallez/persona-ai",
+      "license": "MIT",
+      "keywords": ["persona", "jose", "boomer", "french", "cheminot", "sncf", "retraite", "biere", "fun"],
       "category": "fun"
     }
   ]
