@@ -1,63 +1,61 @@
-# Ajouter un persona ou un thème 🎭
+# Add a persona or a theme 🎭
 
-## La structure
+## The structure
 
 ```
 personas/
-├── registry.json          ← la bibliothèque : thèmes et persona
-└── <thème>/
+├── registry.json          ← the library: themes and persona
+└── <theme>/
     └── <persona>/
         ├── .claude-plugin/plugin.json
         └── skills/<persona>/
-            ├── SKILL.md   ← le persona (source unique)
-            └── *.md       ← les fichiers de référence, facultatifs
+            ├── SKILL.md   ← the persona (single source)
+            └── *.md       ← the reference files, optional
 ```
 
-Un thème est un dossier. Un persona est un dossier dans un thème. Le nom du dossier
-du persona est son identifiant, et le nom du dossier du skill est le même.
+A theme is a folder. A persona is a folder inside a theme. The name of the persona
+folder is its id, and the name of the skill folder is the same.
 
-## Ajouter un persona dans un thème existant
+## Add a persona to an existing theme
 
-1. Copiez le modèle dans le thème choisi :
+1. Copy the model into the theme that you choose:
 
    ```bash
-   cp -r templates/persona personas/boomer/monpersona
-   mv personas/boomer/monpersona/skills/PERSONA_ID personas/boomer/monpersona/skills/monpersona
+   cp -r templates/persona personas/boomer/mypersona
+   mv personas/boomer/mypersona/skills/PERSONA_ID personas/boomer/mypersona/skills/mypersona
    ```
 
-2. Remplacez `PERSONA_ID` et `THEME_ID` dans les deux fichiers.
+2. Replace `PERSONA_ID` and `THEME_ID` in the two files.
 
-3. Écrivez le persona dans `SKILL.md`. Le champ `description` du frontmatter contient
-   les mots d'appel, parce que l'agent lit ce champ pour choisir le persona.
+3. Write the persona in `SKILL.md`. The `description` field of the frontmatter holds the
+   trigger words, because the agent reads this field to choose the persona.
 
-4. Déclarez le persona dans `personas/registry.json`, dans le tableau `personas` de son
-   thème :
+4. Declare the persona in `personas/registry.json`, in the `personas` array of its theme:
 
    ```json
    {
-     "id": "monpersona",
-     "skill": "monpersona",
-     "title": "Le titre court",
-     "tagline": "Une ligne qui decrit le ton.",
+     "id": "mypersona",
+     "skill": "mypersona",
+     "title": "The short title",
+     "tagline": "One line that describes the tone.",
      "files": "SKILL.md",
      "tags": "fr fun",
      "status": "stable"
    }
    ```
 
-   `files` liste les fichiers à installer, séparés par une espace. `SKILL.md` est
-   obligatoire.
+   `files` lists the files to install, separated by a space. `SKILL.md` is mandatory.
 
-   Le champ `legacy` est facultatif. Il liste les anciens noms de skill du persona,
-   séparés par une espace. Le script supprime ces dossiers, parce qu'un persona renommé
-   laisse un dossier orphelin qui répond aux mêmes mots d'appel.
+   The `legacy` field is optional. It lists the old skill names of the persona, separated
+   by a space. The script deletes these folders, because a persona that you rename leaves
+   an orphan folder that answers the same trigger words.
 
-5. Déclarez le plugin dans `.claude-plugin/marketplace.json` :
+5. Declare the plugin in `.claude-plugin/marketplace.json`:
 
    ```json
    {
-     "name": "monpersona",
-     "source": "./personas/boomer/monpersona",
+     "name": "mypersona",
+     "source": "./personas/boomer/mypersona",
      "description": "...",
      "version": "1.0.0",
      "license": "MIT",
@@ -65,43 +63,43 @@ du persona est son identifiant, et le nom du dossier du skill est le même.
    }
    ```
 
-6. Vérifiez :
+6. Check the result:
 
    ```bash
    ./install.sh --list
-   HOME=/tmp/essai ./install.sh --skills-only --agent claude monpersona
+   HOME=/tmp/test ./install.sh --skills-only --agent claude mypersona
    ```
 
-## Ajouter un thème
+## Add a theme
 
-1. Créez le dossier du thème : `mkdir personas/kawaii`.
-2. Ajoutez un objet dans le tableau `themes` de `personas/registry.json` :
+1. Create the folder of the theme: `mkdir personas/kawaii`.
+2. Add an object in the `themes` array of `personas/registry.json`:
 
    ```json
    {
      "theme": "kawaii",
      "theme_title": "Kawaii 🌸",
-     "theme_tagline": "Une ligne qui decrit le theme.",
+     "theme_tagline": "One line that describes the theme.",
      "personas": []
    }
    ```
 
-3. Ajoutez les persona du thème comme au chapitre précédent.
+3. Add the persona of the theme as the previous chapter shows.
 
-## Les règles du registre
+## The rules of the registry
 
-Le script d'installation lit `registry.json` avec `awk`, sans dépendance externe. Les
-règles suivantes protègent cette lecture :
+The install script reads `registry.json` with `awk`, without an external dependency. The
+rules that follow protect this read operation:
 
-- Un couple clé-valeur tient sur une seule ligne.
-- Les valeurs sont des chaînes de caractères. Pas de tableau, sauf `personas`.
-- Les valeurs ne contiennent ni `|` ni `}`.
-- Les clés `theme`, `theme_title`, `theme_tagline`, `id`, `skill`, `title`, `tagline`,
-  `files`, `status` et `legacy` gardent leur nom exact.
+- One key-value pair stays on one line.
+- The values are strings. No array, except `personas`.
+- The values hold no `|` character and no `}` character.
+- The keys `theme`, `theme_title`, `theme_tagline`, `id`, `skill`, `title`, `tagline`,
+  `files`, `status` and `legacy` keep their exact name.
 
-## Les identifiants
+## The ids
 
-- Un identifiant de persona est unique dans toute la bibliothèque, pas seulement dans
-  son thème, parce que `install.sh monpersona` cherche dans tous les thèmes.
-- Un identifiant de persona ne porte jamais le nom d'un thème.
-- Un identifiant contient des lettres minuscules, des chiffres et des tirets.
+- A persona id is unique in the whole library, not only in its theme, because
+  `install.sh mypersona` looks in every theme.
+- A persona id never takes the name of a theme.
+- An id holds lowercase letters, digits and dashes.

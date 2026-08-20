@@ -5,76 +5,76 @@
 <h1 align="center">Persona AI 🎭</h1>
 
 <p align="center">
-  <strong>Une bibliothèque de persona pour ton agent de code</strong>
+  <strong>A persona library for your coding agent</strong>
 </p>
 
 <p align="center">
   <a href="https://github.com/theophile-wallez/persona-ai/stargazers"><img src="https://img.shields.io/github/stars/theophile-wallez/persona-ai?style=flat&color=ff69b4" alt="Stars"></a>
-  <a href="https://github.com/theophile-wallez/persona-ai/commits/main"><img src="https://img.shields.io/github/last-commit/theophile-wallez/persona-ai?style=flat" alt="Dernier commit"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/theophile-wallez/persona-ai?style=flat" alt="Licence"></a>
+  <a href="https://github.com/theophile-wallez/persona-ai/commits/main"><img src="https://img.shields.io/github/last-commit/theophile-wallez/persona-ai?style=flat" alt="Last commit"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/theophile-wallez/persona-ai?style=flat" alt="License"></a>
 </p>
 
 <p align="center">
-  <a href="#la-bibliothèque">La bibliothèque</a> •
+  <a href="#the-library">The library</a> •
   <a href="#installation">Installation</a> •
   <a href="#activation">Activation</a> •
-  <a href="#ajouter-un-persona">Ajouter un persona</a>
+  <a href="#add-a-persona">Add a persona</a>
 </p>
 
 ---
 
-**Persona AI** est une collection de persona pour [Claude
-Code](https://docs.anthropic.com/en/docs/claude-code), Codex, OpenCode et Gemini CLI.
-Un persona change le ton de l'agent, et rien d'autre. Le code reste juste.
+**Persona AI** is a collection of persona for [Claude
+Code](https://docs.anthropic.com/en/docs/claude-code), Codex, OpenCode and Gemini CLI.
+A persona changes the tone of the agent, and nothing else. The code stays correct.
 
-Les persona sont rangés par **thème**. Tu installes toute la bibliothèque, un thème
-complet, ou un seul persona.
+The persona are grouped in **themes**. You install the whole library, one theme, or one
+persona.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- --list
 ```
 
-## La bibliothèque
+## The library
 
 ### 🥰 Boomer — `--theme boomer`
 
-Le Facebook des années 2010 : les émojis en grappe, les pouces et les chaînes.
+The Facebook of the 2010s: emoji clusters, thumbs up and chain letters.
 
-| Persona | État | Ce que ça fait |
+| Persona | Status | What it does |
 |---|---|---|
-| [`natacha`](personas/boomer/natacha) 🥰💐 | stable | Natacha, une copine Facebook de 58 ans. Elle t'appelle « ma Véro », met des pouces à gogo 👍, écrit « sa marche pas », donne des nouvelles de son mari José, salue Patrick et les enfants, et te rappelle que tu as marché sur des braises 🔥. |
+| [`natacha`](personas/boomer/natacha) 🥰💐 | stable | Natacha, a 58 year old French Facebook friend. She calls you « ma Véro », spams thumbs up 👍, writes « sa marche pas », gives news of her husband José, greets Patrick and the kids, and reminds you that you walked on hot coals 🔥. |
 
-D'autres thèmes arrivent. Le chapitre [Ajouter un persona](#ajouter-un-persona)
-explique comment créer un persona, et comment créer un thème.
+More themes come later. The chapter [Add a persona](#add-a-persona) explains how to
+create a persona, and how to create a theme.
 
-> **Le skill `boomer` devient le persona `natacha`, dans le thème `boomer`.** Tape
-> `/natacha` à la place de `/boomer`. Le mot « boomer » reste un mot d'appel, donc
-> « active boomer » marche toujours. Le script d'installation supprime l'ancien dossier
-> `~/.claude/skills/boomer/`. Un ancien plugin s'enlève avec
+> **The `boomer` skill becomes the `natacha` persona, in the `boomer` theme.** Type
+> `/natacha` in place of `/boomer`. The word « boomer » stays a trigger word, so
+> « active boomer » still works. The install script deletes the old
+> `~/.claude/skills/boomer/` folder. An old plugin goes away with
 > `/plugin uninstall boomer@boomer`.
 
 ## Installation
 
-### Option A — Le script universel (recommandé)
+### Option A — The universal script (recommended)
 
 ```bash
-# tous les persona
+# every persona
 curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash
 
-# un seul persona
+# one persona
 curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- natacha
 
-# un thème complet
+# one full theme
 curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- --theme boomer
 
-# la liste, sans rien installer
+# the list, without an install
 curl -fsSL https://raw.githubusercontent.com/theophile-wallez/persona-ai/main/install.sh | bash -s -- --list
 ```
 
-Le script détecte les agents installés. Pour Claude Code, il essaie d'abord le plugin
-marketplace officiel, puis il retombe sur les skills. Tu peux le relancer sans risque.
+The script finds the agents that you installed. For Claude Code, it tries the official
+plugin marketplace first, then it falls back to the skills. You can run it again safely.
 
-Depuis une copie du dépôt, le script installe les fichiers locaux :
+From a clone of the repository, the script installs the local files:
 
 ```bash
 git clone https://github.com/theophile-wallez/persona-ai
@@ -83,35 +83,36 @@ cd persona-ai
 ./install.sh natacha
 ```
 
-### Les commandes du script
+The script speaks French, because the first theme is French.
 
-| Commande | Effet |
+### The commands of the script
+
+| Command | Result |
 |---|---|
-| `install.sh` | installe tous les persona |
-| `install.sh natacha` | installe un persona |
-| `install.sh boomer` | installe un thème complet |
-| `install.sh --theme boomer,kawaii` | installe deux thèmes |
-| `install.sh --list` | affiche les persona, par thème |
-| `install.sh --themes` | affiche les thèmes |
-| `install.sh --agent claude` | cible un seul agent |
-| `install.sh --skills-only` | ignore le plugin marketplace de Claude Code |
-| `install.sh --uninstall natacha` | supprime un persona |
-| `install.sh --uninstall --all` | supprime tous les persona |
-| `install.sh --help` | affiche l'aide |
+| `install.sh` | installs every persona |
+| `install.sh natacha` | installs one persona |
+| `install.sh boomer` | installs one full theme |
+| `install.sh --theme boomer,kawaii` | installs two themes |
+| `install.sh --list` | shows the persona, by theme |
+| `install.sh --themes` | shows the themes |
+| `install.sh --agent claude` | targets one agent |
+| `install.sh --skills-only` | skips the Claude Code marketplace plugin |
+| `install.sh --uninstall natacha` | removes one persona |
+| `install.sh --uninstall --all` | removes every persona |
+| `install.sh --help` | shows the help |
 
-Un argument sans tiret est un identifiant de persona, ou un identifiant de thème.
+An argument without a dash is a persona id, or a theme id.
 
-### Option B — Le plugin marketplace de Claude Code
+### Option B — The Claude Code plugin marketplace
 
 ```shell
 /plugin marketplace add theophile-wallez/persona-ai
 /plugin install natacha@persona-ai
 ```
 
-Mise à jour automatique. Désinstallation propre avec
-`/plugin uninstall natacha@persona-ai`.
+Automatic updates. Clean removal with `/plugin uninstall natacha@persona-ai`.
 
-### Option C — À la main
+### Option C — By hand
 
 ```bash
 PERSONA=natacha
@@ -121,12 +122,12 @@ mkdir -p ~/.claude/skills/$PERSONA
 curl -fsSL "$BASE/SKILL.md" -o ~/.claude/skills/$PERSONA/SKILL.md
 ```
 
-Les fichiers de référence d'un persona sont listés dans le champ `files` de
-[`personas/registry.json`](personas/registry.json). Pour `natacha`, ajoute `patois.md`.
+The reference files of a persona are listed in the `files` field of
+[`personas/registry.json`](personas/registry.json). For `natacha`, add `patois.md`.
 
-### Les dossiers par agent
+### The folder of each agent
 
-| Agent | Dossier |
+| Agent | Folder |
 |---|---|
 | Claude Code | `~/.claude/skills/<persona>/` |
 | Codex | `~/.agents/skills/<persona>/` |
@@ -135,7 +136,7 @@ Les fichiers de référence d'un persona sont listés dans le champ `files` de
 
 ## Activation
 
-Tape `/<persona>`, ou dis `"active <persona>"`. Reviens en normal avec `"mode normal"`.
+Type `/<persona>`, or say `"active <persona>"`. Go back to normal with `"mode normal"`.
 
 ```
 /natacha
@@ -143,76 +144,77 @@ active natacha
 mode normal
 ```
 
-Chaque persona déclare aussi des **mots d'appel**. Le persona s'active tout seul dès
-que tu écris un de ces mots, même au milieu d'une phrase normale. La liste est dans le
-README du persona.
+Each persona also declares **trigger words**. The persona starts as soon as you write
+one of these words, even inside a normal sentence. The README of the persona gives the
+list.
 
-## Comment ça marche
+## How it works
 
-1. L'installation dépose `SKILL.md` et ses fichiers de référence dans le dossier de
-   skills de l'agent.
-2. Le skill dit à l'agent quel ton prendre, quels mots employer, et quoi répéter.
-3. L'agent obéit sur le ton. Il continue à coder correctement.
-4. `/<persona>` active. Un mot d'appel active aussi. « mode normal » désactive.
+1. The installation puts `SKILL.md` and its reference files in the skills folder of the
+   agent.
+2. The skill tells the agent which tone to take, which words to use, and what to repeat.
+3. The agent obeys on the tone. It continues to write correct code.
+4. `/<persona>` starts the persona. A trigger word starts it too. « mode normal » stops
+   it.
 
-Aucun hook. Aucun script qui tourne en fond. Que des fichiers Markdown. Les mots
-d'appel passent par le champ `description` du skill, que l'agent lit tout seul.
+No hook. No script that runs in the background. Markdown files only. The trigger words
+go through the `description` field of the skill, which the agent reads by itself.
 
-## La règle qui compte
+## The rule that counts
 
-**Un persona se trompe sur le ton, jamais sur le code.**
+**A persona makes mistakes on the tone, never on the code.**
 
-- Les fautes vont dans le texte, pas dans les commandes.
-- Les chemins, les URLs, les noms de fonctions et les numéros de version restent exacts.
-- Un vrai bug est signalé avec son fichier et sa ligne. Un faux bug est interdit.
-- Le vrai code de production reste propre. Les noms de variables rigolos sont réservés
-  aux exemples illustratifs.
+- The spelling mistakes go in the text, not in the commands.
+- The paths, the URLs, the function names and the version numbers stay exact.
+- A real bug comes with its file and its line. A false bug is forbidden.
+- Your production code stays clean. The funny variable names are for the illustrative
+  examples only.
 
 ## Structure
 
 ```
 persona-ai/
-├── .claude-plugin/marketplace.json     ← le marketplace Claude Code
-├── install.sh                          ← l'installateur multi-agents
+├── .claude-plugin/marketplace.json     ← the Claude Code marketplace
+├── install.sh                          ← the multi-agent installer
 ├── personas/
-│   ├── registry.json                   ← la bibliothèque : thèmes et persona
-│   └── boomer/                         ← un thème = un dossier
-│       └── natacha/                    ← un persona = un dossier
+│   ├── registry.json                   ← the library: themes and persona
+│   └── boomer/                         ← one theme = one folder
+│       └── natacha/                    ← one persona = one folder
 │           ├── README.md
 │           ├── .claude-plugin/plugin.json
 │           └── skills/natacha/
-│               ├── SKILL.md            ← le persona (source unique)
-│               └── patois.md           ← les références du persona
+│               ├── SKILL.md            ← the persona (single source)
+│               └── patois.md           ← the references of the persona
 └── templates/
-    ├── README.md                       ← comment ajouter un persona ou un thème
-    └── persona/                        ← le modèle à copier
+    ├── README.md                       ← how to add a persona or a theme
+    └── persona/                        ← the model to copy
 ```
 
-Format plugin officiel :
-[docs Claude Code](https://docs.anthropic.com/en/docs/claude-code/plugin-marketplaces)
+Official plugin format:
+[Claude Code docs](https://docs.anthropic.com/en/docs/claude-code/plugin-marketplaces)
 
-## Ajouter un persona
+## Add a persona
 
-Le guide complet est dans [`templates/README.md`](templates/README.md). En résumé :
+The complete guide is in [`templates/README.md`](templates/README.md). In short:
 
 ```bash
-cp -r templates/persona personas/<thème>/<persona>
-mv personas/<thème>/<persona>/skills/PERSONA_ID personas/<thème>/<persona>/skills/<persona>
-# remplace PERSONA_ID et THEME_ID, écris SKILL.md
-# déclare le persona dans personas/registry.json
-# déclare le plugin dans .claude-plugin/marketplace.json
+cp -r templates/persona personas/<theme>/<persona>
+mv personas/<theme>/<persona>/skills/PERSONA_ID personas/<theme>/<persona>/skills/<persona>
+# replace PERSONA_ID and THEME_ID, then write SKILL.md
+# declare the persona in personas/registry.json
+# declare the plugin in .claude-plugin/marketplace.json
 ./install.sh --list
 ```
 
-Pour un nouveau thème, crée le dossier `personas/<thème>/` et ajoute un objet dans le
-tableau `themes` du registre.
+For a new theme, create the `personas/<theme>/` folder and add an object in the `themes`
+array of the registry.
 
-## Mets une étoile
+## Give a star
 
-Si un persona t'a fait sourire ⭐
+If a persona made you smile ⭐
 
-> Inspiré de [bebou](https://github.com/Cyberoiide/bebou)
+> Inspired by [bebou](https://github.com/Cyberoiide/bebou)
 
-## Licence
+## License
 
 MIT
